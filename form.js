@@ -26,6 +26,8 @@ class Form
         this.stress.mousePressed(()=>
         {
             this.stress.hide();
+            this.anxiety.hide();
+            this.depression.hide();
             this.pos.position(700,400);
             this.neg.position(700,450);
             gameState = 2;
