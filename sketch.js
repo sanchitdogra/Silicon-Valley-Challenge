@@ -4,7 +4,9 @@ var stress = 0;
 var question = 0;
 var questionD = 0;
 var questionA = 0;
+var questionAS = 0;
 var depression = 0;
+var asthama = 0;
 var anxiety = 0;
 var form;
 
@@ -63,6 +65,15 @@ function draw()
     pop(); 
   }
 
+  if(questionAS === 1)
+  {
+    push();
+    fill("white");
+    textSize(30);
+    text("Do you cough frequently, especially at night?", 200,300);
+    pop(); 
+  }
+
   if(question === 2)
   {
     push();
@@ -87,6 +98,15 @@ function draw()
     fill("white");
     textSize(30);
     text("Do you have difficulty concentrating or recalling?", 200,300);
+    pop(); 
+  }
+
+  if(questionAS === 2)
+  {
+    push();
+    fill("white");
+    textSize(30);
+    text("Do you loose breath easily?", 200,300);
     pop(); 
   }
 
@@ -117,6 +137,15 @@ function draw()
     pop(); 
   }
 
+  if(questionAS === 3)
+  {
+    push();
+    fill("white");
+    textSize(30);
+    text("Do you wheez or cough after exercising?", 200,300);
+    pop(); 
+  }
+
   if(question === 4)
   {
     push();
@@ -141,6 +170,15 @@ function draw()
     fill("white");
     textSize(30);
     text("Do you feel a racing heart frequently?", 200,300);
+    pop(); 
+  }
+
+  if(questionAS === 4)
+  {
+    push();
+    fill("white");
+    textSize(30);
+    text("Do you feel tired, get easily upset?", 200,300);
     pop(); 
   }
 
@@ -171,6 +209,15 @@ function draw()
     pop(); 
   }
 
+  if(questionAS === 5)
+  {
+    push();
+    fill("white");
+    textSize(30);
+    text("Do you experience decrease or changes in lung function?", 200,300);
+    pop(); 
+  }
+
   if(question === 6)
   {
     push();
@@ -195,6 +242,16 @@ function draw()
     fill("white");
     textSize(30);
     text("Do you have sleep difficulties including problems falling asleep and restlesness, unsatisfying sleep?", 100,300);
+    pop(); 
+  }
+
+  if(questionAS === 6)
+  {
+    push();
+    fill("white");
+    textSize(30);
+    text("Do you experience signs of a cold or allergies (sneezing, runny nose, cough, nasal congestion, sore throat, ", 40,200);
+    text("and headache?",680,280);
     pop(); 
   }
 
@@ -225,6 +282,15 @@ function draw()
     pop(); 
   }
 
+  if(questionAS === 7)
+  {
+    push();
+    fill("white");
+    textSize(30);
+    text("Do you have trouble sleeping due to your nose?", 100,300);
+    pop(); 
+  }
+
   if(question === 8)
   {
     push();
@@ -249,6 +315,15 @@ function draw()
     fill("white");
     textSize(30);
     text("Do you have difficulty controlling worry or fear?", 100,300);
+    pop(); 
+  }
+
+  if(questionAS === 8)
+  {
+    push();
+    fill("white");
+    textSize(30);
+    text("Do you expirience severe wheezing when in or out?", 100,300);
     pop(); 
   }
 
@@ -279,6 +354,15 @@ function draw()
     pop(); 
   }
 
+  if(questionAS === 9)
+  {
+    push();
+    fill("white");
+    textSize(30);
+    text("Do you expirience chest pain or pressure?", 100,300);
+    pop(); 
+  }
+
   if(question === 10)
   {
     push();
@@ -303,6 +387,15 @@ function draw()
     fill("white");
     textSize(30);
     text("Do you keep racing through your thoughts constantly?", 100,300);
+    pop(); 
+  }
+
+  if(questionAS === 10)
+  {
+    push();
+    fill("white");
+    textSize(30);
+    text("Do you difficulty in talking?", 100,300);
     pop(); 
   }
 
@@ -336,6 +429,17 @@ function draw()
     pop();
   }
 
+  if(questionAS === 11 && asthama>0 && asthama<3 || asthama === 3 && questionAS === 11 || asthama === 0 && questionAS === 11)
+  {
+    form.hide();
+    push();
+    textSize(30);
+    fill("white");
+    text("You dont have any signs asthama but if you feel that are not satisfied with the results you can surely consult", 30,300);
+    text("a professional", 600, 350);
+    pop();
+  }
+
   if(question === 11 && stress > 3 && stress < 5 || stress === 5 && question === 11)
   {
     form.hide();
@@ -363,6 +467,16 @@ function draw()
     textSize(30);
     fill("white");
     text("You have mild anxiety.", 200,300);
+    pop();
+  }
+
+  if(questionAS === 11 && asthama > 3 && asthama < 5 || asthama === 5 && questionAS === 11)
+  {
+    form.hide();
+    push();
+    textSize(30);
+    fill("white");
+    text("You have don't have asthama.", 200,300);
     pop();
   }
 
@@ -396,13 +510,23 @@ function draw()
     pop();
   }
 
+  if(questionAS === 11 && asthama > 5 && asthama < 8 || asthama ===8 && questionAS=== 11)
+  {
+    form.hide();
+    push();
+    textSize(30);
+    fill("white");
+    text("You have asthama but it is nothing serious, but if the symtoms change you should see a professional.", 110,300);
+    pop();
+  }
+
   if(question === 11 && stress > 8 && stress < 10 || stress === 10 && question === 11)
   {
     form.hide();
     push();
     textSize(30);
     fill("white");
-    text("You have vary high stress and I advice you to consult a professional straight away.", 200,300);
+    text("You have very high stress and I advice you to consult a professional straight away.", 200,300);
     pop();
   }
 
@@ -412,7 +536,7 @@ function draw()
     push();
     textSize(30);
     fill("white");
-    text("You have vary high depression and I advice you to consult a professional straight away.", 200,300);
+    text("You have very high depression and I advice you to consult a professional straight away.", 200,300);
     pop();
   }
 
@@ -422,7 +546,18 @@ function draw()
     push();
     textSize(30);
     fill("white");
-    text("You have vary high anxiety and I advice you to consult a professional straight away.", 200,300);
+    text("You have very high anxiety and I advice you to consult a professional straight away.", 200,300);
+    pop();
+  }
+
+  if(questionAS === 11 && asthama > 8 && asthama < 10 || asthama === 10 && questionAS === 11)
+  {
+    form.hide();
+    push();
+    textSize(30);
+    fill("white");
+    text("You have severe asthama and it get serious when exercising please consult a professional if you haven't done", 30,300);
+    text("it yet.",750,350);
     pop();
   }
 
